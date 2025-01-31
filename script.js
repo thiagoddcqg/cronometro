@@ -1,7 +1,7 @@
 function calculateTimeRemaining(endDate) {
     const now = new Date();
-    const end = new Date(endDate);
-    const totalSeconds = Math.floor((end - now) / 1000);
+    const end = new Date(`${endDate}T00:00:00`);
+    const totalSeconds = Math.floor((end.getTime() - now.getTime()) / 1000);
 
     if (totalSeconds < 0) {
         return "Data já passou!";
